@@ -60,7 +60,11 @@ function generatePassword() {
 
 // Generate Password Button
 
-document.getElementById("generatePassword").addEventListener("click", generatePassword);
-
-console.log(generatePassword())
-
+let generatedPassword = document.getElementById("generatePassword").addEventListener("click", () => {
+    let multiplier = characterArray.length;
+    let generatedPassword = "";
+    for (var i = 0; i < passwordLength; i++) {
+        generatedPassword += characterArray.charAt(Math.floor(Math.random() * multiplier));
+    }
+    document.getElementById("displayGeneratedPassword").innerText = generatedPassword;
+});
