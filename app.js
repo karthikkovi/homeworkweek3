@@ -14,20 +14,34 @@ let generatedPassword = document.getElementById("generatePassword").addEventList
     getPasswordLength();
     generateCharacterArray();
 
-    let multiplier = characterArray.length;
-    let generatedPassword = "";
-    for (var i = 0; i < passwordLength; i++) {
-        generatedPassword += characterArray.charAt(Math.floor(Math.random() * multiplier));
+    if (passwordLength > 7 && passwordLength < 129) {
+        let multiplier = characterArray.length; //Determining the amount of characters available to generate the password.
+        let generatedPassword = ""; // Declaring empty string to store the generated password.
+        for (var i = 0; i < passwordLength; i++) { // Loop through the length of the password requested by the user.
+            generatedPassword += characterArray.charAt(Math.floor(Math.random() * multiplier)); // Storing the generated from the loop.
+        }
+        characterArray = ""; // reverting the character array to empty string for future use.
+        passwordLength = 0; // reverting the password length to get new password length if the user wants to.
+        document.getElementById("displayGeneratedPassword").innerText = generatedPassword; // displaying the generated password.
+    } else {
+        document.getElementById("displayGeneratedPassword").innerText = "Passwords can only be generated between 8 and 128 characters in length."
     }
-    characterArray = "";
-    passwordLength = 0;
-    document.getElementById("displayGeneratedPassword").innerText = generatedPassword;
+    setTimeout(function() {
+    document.getElementById("passwordHelp").style.display = "none";
+    document.getElementById("passwordHelp128").style.display = "none";
+    }, 5000);
 });
 
 function getPasswordLength() {
-    passwordLength = parseInt(document.getElementById("passwordLength").value);
-    
-    return passwordLength;
+    passwordLength = parseInt(document.getElementById("passwordLength").value); // Reading the password length from the HTML field and parsing it to int.
+    if (passwordLength < 8) {
+        document.getElementById("passwordLength").classList.add("redBox");
+        document.getElementById("passwordHelp").style.display = "block";
+    } else if (passwordLength > 128) {
+        document.getElementById("passwordHelp128").style.display = "block";
+    } else {
+        return passwordLength;
+    }
 }
 
 //Generate character array 
@@ -66,6 +80,6 @@ function generateCharacterArray() {
 
 //Copy Button
 
-document.getElementById("copyButton").addEventListener("click", ()=>{
+document.getElementById("copyButton").addEventListener("click", () => {
     document.getElementById("copyButton").innerText = "Copied!"
 })

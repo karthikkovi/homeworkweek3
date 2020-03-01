@@ -2,3 +2,18 @@
     background-color: #4a47a3;
     color: #eab9c9;
 }
+
+.redBox {
+    border-color: red;
+    border-style: solid;
+}
+
+#passwordHelp {
+    display: none;
+    background-color: yellow;
+}
+
+#passwordHelp128 {
+    display: none;
+    background-color: yellow;   
+}
