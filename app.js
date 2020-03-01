@@ -15,34 +15,49 @@ while (passwordLength <8){
     passwordLength = parseInt(prompt("Please enter a value above 8 to get a secure password."));
 }
 
-console.log(passwordLength);
+useUpperCaseLetters = confirm("Do you want to use Uppercase Letters in the password?");
+useLowerCaseLetters = confirm("Do you want to use Lowercase letters in the password?");
+useNumbers = confirm("Do you want to use Numbers in the password?");
+useSpecialCharacters = confirm("Do you want to use special characters in the password?");
 
+if (useUpperCaseLetters) {
+    characterArray += uppercaseLetters;
+}
+if (useLowerCaseLetters) {
+    characterArray += lowercaseLetters;
+}
+if (useNumbers) {
+    characterArray += numbersForPassword;
+}
+if (useSpecialCharacters) {
+    characterArray += specialCharacters
+}
 // Determine what the user wants
 
-inputUpperCase = document.getElementById("inputGroupUpperCase");
-useUpperCaseLetters = inputUpperCase.options[inputUpperCase.selectedIndex].value;
+// inputUpperCase = document.getElementById("inputGroupUpperCase");
+// useUpperCaseLetters = inputUpperCase.options[inputUpperCase.selectedIndex].value;
 
-inputLowerCase = document.getElementById("inputGroupLowerCase");
-useLowerCaseLetters = inputLowerCase.options[inputLowerCase.selectedIndex].value;
+// inputLowerCase = document.getElementById("inputGroupLowerCase");
+// useLowerCaseLetters = inputLowerCase.options[inputLowerCase.selectedIndex].value;
 
-inputNumbers = document.getElementById("inputGroupNumbers");
-useNumbers = inputNumbers.options[inputNumbers.selectedIndex].value;
+// inputNumbers = document.getElementById("inputGroupNumbers");
+// useNumbers = inputNumbers.options[inputNumbers.selectedIndex].value;
 
-inputSpecialCharacters = document.getElementById("inputGroupSpecialCharacters");
-useSpecialCharacters = inputSpecialCharacters.options[inputSpecialCharacters.selectedIndex].value;
+// inputSpecialCharacters = document.getElementById("inputGroupSpecialCharacters");
+// useSpecialCharacters = inputSpecialCharacters.options[inputSpecialCharacters.selectedIndex].value;
 
 
-    // if (useUpperCaseLetters === 1){
-        characterArray += uppercaseLetters;
+    // if (useUpperCaseLetters === "1"){
+    //     characterArray += uppercaseLetters;
     // }
     // if (useLowerCaseLetters === 1){
-        characterArray += lowercaseLetters;
+        // characterArray += lowercaseLetters;
     // }
     // if (useNumbers === 1){
-        characterArray += numbersForPassword;
+        // characterArray += numbersForPassword;
     // }
     // if (useSpecialCharacters === 1) {
-        characterArray += specialCharacters;
+        // characterArray += specialCharacters;
     // }
 
     console.log(characterArray);
