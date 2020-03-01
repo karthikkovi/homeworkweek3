@@ -13,16 +13,7 @@
 <body>
     <h1 class="mt-1 ml-3">Generate a Random Password.</h1>
     
-    <div class="container">
-        <div class="row mt-5">
-            <form>
-                <div class="form-group">
-                    <label for="password length">Please enter the length of your password</label>
-                    <input type="number" class="form-control" id="passwordLength" aria-describedby="passwordLength"
-                        placeholder="Enter the length of your password">
-                </div>
-            </form>
-        </div>
+    <div class="container mt-5">
         
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -68,12 +59,12 @@
             </select>
           </div>
 
-          <button type="button" class="btn btn-success">Generate Password</button>
+          <button type="button" class="btn btn-success" id="generatePassword">Generate Password</button>
 
           <form>
             <div class="form-group">
                 <label for="generatedPassword">Your Generated Password will appear below</label>
-                <textarea class="form-control" id="generatedPassword" rows="3"></textarea>
+                <textarea class="form-control" id="displayGeneratedPassword" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary mb-2 customSubmit">Copy</button>
           </form>
