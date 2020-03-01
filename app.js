@@ -1,26 +1,66 @@
-let password_length, uppercase_letters, lowercase_letters, numbers_for_password, special_characters;
+let passwordLength, uppercaseLetters, lowercaseLetters, numbersForPassword, specialCharacters, useUpperCaseLetters, useLowerCaseLetters, useNumbers, useSpecialCharacters, inputUpperCase, inputLowerCase, inputNumbers, inputSpecialCharacters, characterArray;
 
 
-uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-lowercase_letters = "abcdefghijklmnopqrstuvwxyz";
-numbers_for_password = "0123456789";
-special_characters = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+numbersForPassword = "0123456789";
+specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+characterArray = "";
 
-password_length = parseInt(prompt("Please enter the length of the password"));
+//Get password length
 
-while (password_length <8){
-    password_length = parseInt(prompt("Please enter a value above 8 to get a secure password."));
+passwordLength = parseInt(prompt("Please enter the length of the password"));
+
+while (passwordLength <8){
+    passwordLength = parseInt(prompt("Please enter a value above 8 to get a secure password."));
 }
 
-console.log(password_length);
+console.log(passwordLength);
+
+// Determine what the user wants
+
+inputUpperCase = document.getElementById("inputGroupUpperCase");
+useUpperCaseLetters = inputUpperCase.options[inputUpperCase.selectedIndex].value;
+
+inputLowerCase = document.getElementById("inputGroupLowerCase");
+useLowerCaseLetters = inputLowerCase.options[inputLowerCase.selectedIndex].value;
+
+inputNumbers = document.getElementById("inputGroupNumbers");
+useNumbers = inputNumbers.options[inputNumbers.selectedIndex].value;
+
+inputSpecialCharacters = document.getElementById("inputGroupSpecialCharacters");
+useSpecialCharacters = inputSpecialCharacters.options[inputSpecialCharacters.selectedIndex].value;
+
+
+    // if (useUpperCaseLetters === 1){
+        characterArray += uppercaseLetters;
+    // }
+    // if (useLowerCaseLetters === 1){
+        characterArray += lowercaseLetters;
+    // }
+    // if (useNumbers === 1){
+        characterArray += numbersForPassword;
+    // }
+    // if (useSpecialCharacters === 1) {
+        characterArray += specialCharacters;
+    // }
+
+    console.log(characterArray);
+// Generate Password Function
+
+function generatePassword() {
+    let multiplier = characterArray.length;
+    let returnValue = "";
+    for (var i = 0; i < passwordLength; i++) {
+        returnValue += characterArray.charAt(Math.floor(Math.random() * multiplier));
+    }
+
+    return returnValue;
+}
 
 // Generate Password Button
 
-// document.getElementById("generatePassword").addEventListener("click", ()=>{
-//     if (password_length != null) {
-//         password_length = parseInt(document.getElementById("passwordLength").value);
-//     } else {
-//         alert("Please enter the number of characters required for the password.")
-//     }
-// })
+document.getElementById("generatePassword").addEventListener("click", generatePassword);
+
+console.log(generatePassword())
 
