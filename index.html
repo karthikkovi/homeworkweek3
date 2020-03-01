@@ -6,64 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Password Generator</title>
 </head>
 
 <body>
     <h1 class="mt-1 ml-3">Generate a Random Password.</h1>
-    
+
     <div class="container mt-5">
-    <!--     
+        <form>
+                <div class="form-group">
+                    <label for="passwordLength">Please enter the length of the required password.</label>
+                    <input type="number" class="form-control" id="passwordLength" placeholder="Password length">
+                </div>
+        </form>
+
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupUpperCase">Do you want to include Upper Case letters in your password</label>
+                <label class="input-group-text" for="inputGroupUpperCase">Do you want to include Upper Case letters in
+                    your password</label>
             </div>
             <select class="custom-select" id="inputGroupUpperCase">
-              <option value="1">Yes</option>
-              <option value="2">No</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
             </select>
-          </div>
+        </div>
 
-          <div class="input-group mb-3">
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupLowerCase">Do you want to include Lower Case letters in your password</label>
+                <label class="input-group-text" for="inputGroupLowerCase">Do you want to include Lower Case letters in
+                    your password</label>
             </div>
             <select class="custom-select" id="inputGroupLowerCase">
-              <option value="1">Yes</option>
-              <option value="2">No</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
             </select>
-          </div>
+        </div>
 
-          <div class="input-group mb-3">
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupNumbers">Do you want to include Numbers in your password</label>
+                <label class="input-group-text" for="inputGroupNumbers">Do you want to include Numbers in your
+                    password</label>
             </div>
             <select class="custom-select" id="inputGroupNumbers">
-              <option value="1">Yes</option>
-              <option value="2">No</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
             </select>
-          </div>
+        </div>
 
-          <div class="input-group mb-3">
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSpecialCharacters">Do you want to include Special Characters in your password</label>
+                <label class="input-group-text" for="inputGroupSpecialCharacters">Do you want to include Special
+                    Characters in your password</label>
             </div>
             <select class="custom-select" id="inputGroupSpecialCharacters">
-              <option value="1">Yes</option>
-              <option value="2">No</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
             </select>
-          </div> -->
+        </div>
 
-          <button type="button" class="btn btn-success" id="generatePassword">Generate Password</button>
+        <button type="button" class="btn btn-success" id="generatePassword">Generate Password</button>
 
-          <form>
+        <form>
             <div class="form-group">
                 <label for="generatedPassword">Your Generated Password will appear below</label>
                 <textarea class="form-control" id="displayGeneratedPassword" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary mb-2 customSubmit">Copy</button>
-          </form>
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -75,7 +85,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-        <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
