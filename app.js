@@ -13,8 +13,6 @@ characterArray = "";
 let generatedPassword = document.getElementById("generatePassword").addEventListener("click", () => {
     getPasswordLength();
     generateCharacterArray();
-    console.log(passwordLength);
-    console.log(characterArray);
 
     let multiplier = characterArray.length;
     let generatedPassword = "";
@@ -28,6 +26,7 @@ let generatedPassword = document.getElementById("generatePassword").addEventList
 
 function getPasswordLength() {
     passwordLength = parseInt(document.getElementById("passwordLength").value);
+    
     return passwordLength;
 }
 
@@ -64,3 +63,9 @@ function generateCharacterArray() {
     }
     return characterArray;
 }
+
+//Copy Button
+
+document.getElementById("copyButton").addEventListener("click", ()=>{
+    document.getElementById("copyButton").innerText = "Copied!"
+})
