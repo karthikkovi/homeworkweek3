@@ -14,7 +14,7 @@ let generatedPassword = document.getElementById("generatePassword").addEventList
     getPasswordLength();
     generateCharacterArray();
 
-    if (passwordLength > 7 && passwordLength < 129) {
+    if (passwordLength > 7 && passwordLength < 129) { // To implement  the logic for generating password between 8 and 128 characters.
         let multiplier = characterArray.length; //Determining the amount of characters available to generate the password.
         let generatedPassword = ""; // Declaring empty string to store the generated password.
         for (var i = 0; i < passwordLength; i++) { // Loop through the length of the password requested by the user.
@@ -23,10 +23,10 @@ let generatedPassword = document.getElementById("generatePassword").addEventList
         characterArray = ""; // reverting the character array to empty string for future use.
         passwordLength = 0; // reverting the password length to get new password length if the user wants to.
         document.getElementById("displayGeneratedPassword").innerText = generatedPassword; // displaying the generated password.
-    } else {
+    } else { // To show a message in the generate password screen.
         document.getElementById("displayGeneratedPassword").innerText = "Passwords can only be generated between 8 and 128 characters in length."
     }
-    setTimeout(function() {
+    setTimeout(function() { // To remove the warning messages.
     document.getElementById("passwordHelp").style.display = "none";
     document.getElementById("passwordHelp128").style.display = "none";
     }, 5000);
@@ -34,7 +34,7 @@ let generatedPassword = document.getElementById("generatePassword").addEventList
 
 function getPasswordLength() {
     passwordLength = parseInt(document.getElementById("passwordLength").value); // Reading the password length from the HTML field and parsing it to int.
-    if (passwordLength < 8) {
+    if (passwordLength < 8) { //To display warning messages
         document.getElementById("passwordLength").classList.add("redBox");
         document.getElementById("passwordHelp").style.display = "block";
     } else if (passwordLength > 128) {
@@ -48,7 +48,7 @@ function getPasswordLength() {
 
 function generateCharacterArray() {
 
-    // Determine what the user wants
+    // Read user options from the dropdowns
 
     inputUpperCase = document.getElementById("inputGroupUpperCase");
     useUpperCaseLetters = inputUpperCase.options[inputUpperCase.selectedIndex].value;
@@ -62,7 +62,7 @@ function generateCharacterArray() {
     inputSpecialCharacters = document.getElementById("inputGroupSpecialCharacters");
     useSpecialCharacters = inputSpecialCharacters.options[inputSpecialCharacters.selectedIndex].value;
 
-
+    //Generating a character array based on prefrences.
     if (useUpperCaseLetters === "1") {
         characterArray += uppercaseLetters;
     }
@@ -78,7 +78,7 @@ function generateCharacterArray() {
     return characterArray;
 }
 
-//Copy Button
+//changing the text of the copy button to copied
 
 document.getElementById("copyButton").addEventListener("click", () => {
     document.getElementById("copyButton").innerText = "Copied!"
