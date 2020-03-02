@@ -9,7 +9,7 @@ characterArray = "";
 
 // Generate Password Button
 
-let generatedPassword = document.getElementById("generatePassword").addEventListener("click", () => {
+document.getElementById("generatePassword").addEventListener("click", () => {
     // Read password length
     passwordLength = parseInt(document.getElementById("passwordLength").value);
 
