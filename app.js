@@ -1,11 +1,10 @@
-let passwordLength, characterArray;
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
 let specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 let listOfCharacters = [upperCase, lowerCase, numbers, specialCharacters];
-passwordLength = 0;
-characterArray = "";
+let passwordLength = 0;
+let characterArray = "";
 
 // Generate Password Button
 
