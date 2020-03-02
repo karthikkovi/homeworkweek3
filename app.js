@@ -15,7 +15,7 @@ let generatedPassword = document.getElementById("generatePassword").addEventList
 
     generateCharacterArray();
 
-    if (characterArray === ""){
+    if (characterArray === "") {
         // alert("Please select yes to anyone of the drop downs.");
         document.getElementById("input-validate").style.display = "block";
     } else if (passwordLength > 7 && passwordLength < 129) {
@@ -56,8 +56,8 @@ function generateCharacterArray() {
 
 function resetCSS() {
     document.getElementById("passwordHelp").style.display = "none";
-        document.getElementById("passwordLength").classList.remove("redBox");
-        document.getElementById("input-validate").style.display = "none";
+    document.getElementById("passwordLength").classList.remove("redBox");
+    document.getElementById("input-validate").style.display = "none";
 }
 
 //changing the text of the copy button to copied
