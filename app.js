@@ -12,12 +12,15 @@ characterArray = "";
 let generatedPassword = document.getElementById("generatePassword").addEventListener("click", () => {
     // Read password length
     passwordLength = parseInt(document.getElementById("passwordLength").value);
-    
+
     generateCharacterArray();
 
     if (characterArray === ""){
-        alert("Please select yes to anyone of the drop downs.");
+        // alert("Please select yes to anyone of the drop downs.");
+        document.getElementById("input-validate").style.display = "block";
     } else if (passwordLength > 7 && passwordLength < 129) {
+
+        resetCSS();
 
         let multiplier = characterArray.length;
         let generatedPassword = "";
@@ -30,10 +33,6 @@ let generatedPassword = document.getElementById("generatePassword").addEventList
     } else {
         document.getElementById("passwordLength").classList.add("redBox");
         document.getElementById("passwordHelp").style.display = "block";
-        setTimeout(() => { 
-            document.getElementById("passwordHelp").style.display = "none";
-            document.getElementById("passwordLength").classList.remove("redBox");
-        }, 5000);
     }
 });
 
@@ -53,8 +52,17 @@ function generateCharacterArray() {
     return characterArray;
 }
 
+//Reset CSS
+
+function resetCSS() {
+    document.getElementById("passwordHelp").style.display = "none";
+        document.getElementById("passwordLength").classList.remove("redBox");
+        document.getElementById("input-validate").style.display = "none";
+}
+
 //changing the text of the copy button to copied
 
 document.getElementById("copyButton").addEventListener("click", () => {
     document.getElementById("copyButton").innerText = "Copied!"
 })
+
