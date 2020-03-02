@@ -10,10 +10,14 @@ characterArray = "";
 // Generate Password Button
 
 let generatedPassword = document.getElementById("generatePassword").addEventListener("click", () => {
-    getPasswordLength();
+    // Read password length
+    passwordLength = parseInt(document.getElementById("passwordLength").value);
+    
     generateCharacterArray();
 
-    if (passwordLength > 7 && passwordLength < 129) {
+    if (characterArray === ""){
+        alert("Please select yes to anyone of the drop downs.");
+    } else if (passwordLength > 7 && passwordLength < 129) {
 
         let multiplier = characterArray.length;
         let generatedPassword = "";
@@ -24,23 +28,14 @@ let generatedPassword = document.getElementById("generatePassword").addEventList
         passwordLength = 0;
         document.getElementById("displayGeneratedPassword").innerText = generatedPassword;
     } else {
+        document.getElementById("passwordLength").classList.add("redBox");
+        document.getElementById("passwordHelp").style.display = "block";
         setTimeout(() => { 
             document.getElementById("passwordHelp").style.display = "none";
             document.getElementById("passwordLength").classList.remove("redBox");
         }, 5000);
     }
 });
-
-
-function getPasswordLength() {
-    passwordLength = parseInt(document.getElementById("passwordLength").value);
-    if (passwordLength < 8 || passwordLength > 128) {
-        document.getElementById("passwordLength").classList.add("redBox");
-        document.getElementById("passwordHelp").style.display = "block";
-    } else {
-        return passwordLength;
-    }
-}
 
 function generateCharacterArray() {
 
