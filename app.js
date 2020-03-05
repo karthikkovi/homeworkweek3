@@ -15,7 +15,6 @@ document.getElementById("generatePassword").addEventListener("click", () => {
     generateCharacterArray();
 
     if (characterArray === "") {
-        // alert("Please select yes to anyone of the drop downs.");
         document.getElementById("input-validate").style.display = "block";
     } else if (passwordLength > 7 && passwordLength < 129) {
 
@@ -61,7 +60,7 @@ function resetCSS() {
 
 //changing the text of the copy button to copied
 
-document.getElementById("copyButton").addEventListener("click", () => {
+document.getElementById("copyButton").addEventListener("click", (e) => {
+    e.preventDefault();
     document.getElementById("copyButton").innerText = "Copied!"
 })
-
