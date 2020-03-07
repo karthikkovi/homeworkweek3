@@ -25,50 +25,34 @@
         <div>
             <h5 id="input-validate" style="display: none; background-color: yellow ;">Please select yes to anyone of the drop downs.</h5>
         </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupUpperCase">Do you want to include Uppercase
-                    letters.</label>
-            </div>
-            <select class="custom-select" id="inputGroup-1">
-                <option value="1">Yes</option>
-                <option value="2">No</option>
-            </select>
+        
+        <div class="form-check">
+            <label class="form-check-label" for="inputGroupUpperCase">Use Uppercase
+                letters.</label>
+            <input type="checkbox" class="form-check-input ml-auto" id="inputGroup-1">
         </div>
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupLowerCase">Do you want to include Lowercase
-                    letters.</label>
-            </div>
-            <select class="custom-select" id="inputGroup-2">
-                <option value="1">Yes</option>
-                <option value="2">No</option>
-            </select>
+        <div class="form-check">
+            <label class="form-check-label" for="inputGroupLowerCase">Use Lowercase
+                letters.</label>
+            <input type="checkbox" class="form-check-input ml-auto" id="inputGroup-2">
         </div>
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupNumbers">Do you want to include Numbers.</label>
-            </div>
-            <select class="custom-select" id="inputGroup-3">
-                <option value="1">Yes</option>
-                <option value="2">No</option>
-            </select>
+        <div class="form-check">
+            <label class="form-check-label" for="inputGroupNumbers">Include Numbers.</label>
+            <input type="checkbox" class="form-check-input ml-auto" id="inputGroup-3">
         </div>
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSpecialCharacters">Do you want to include Special
-                    Characters.</label>
-            </div>
-            <select class="custom-select" id="inputGroup-4">
-                <option value="1">Yes</option>
-                <option value="2">No</option>
-            </select>
+        <div class="form-check">
+            <label class="form-check-label" for="inputGroupNumbers">Include Special
+                Characters.</label>
+            <input type="checkbox" class="form-check-input ml-auto" id="inputGroup-4">
         </div>
 
-        <button type="button" class="btn btn-success" id="generatePassword">Generate Password</button>
+
+        <div>
+            <button type="button" class="btn btn-success" id="generatePassword">Generate Password</button>
+        </div>
 
         <form>
             <div class="form-group">
