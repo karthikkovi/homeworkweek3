@@ -13,7 +13,8 @@
 <body>
     <h1 class="mt-1 ml-3">Generate a Random Password.</h1>
 
-    <div class="container mt-5 col-md-11 col-sm-11">
+    <main class="container mt-5 col-md-11 col-sm-11">
+        <!-- Form to get the password length -->
         <form>
             <div class="form-group">
                 <label for="passwordLength">Please enter the length of the required password.</label>
@@ -22,10 +23,13 @@
                     characters</small>
             </div>
         </form>
+        <!-- CSS style to show error on page -->
         <div>
-            <h5 id="input-validate" style="display: none; background-color: yellow ;">Please select yes to anyone of the drop downs.</h5>
+            <h5 id="input-validate" style="display: none; background-color: yellow ;">Please select yes to anyone of the
+                drop downs.</h5>
         </div>
-        
+
+        <!-- checkboxes for user choice -->
         <div class="form-check">
             <label class="form-check-label" for="inputGroupUpperCase">Use Uppercase
                 letters</label>
@@ -49,7 +53,7 @@
             <input type="checkbox" class="form-check-input ml-2" id="inputGroup-4">
         </div>
 
-
+        <!-- Generate password button -->
         <div>
             <button type="button" class="btn btn-success" id="generatePassword">Generate Password</button>
         </div>
@@ -59,10 +63,11 @@
                 <label for="generatedPassword">Your Generated Password will appear below</label>
                 <textarea class="form-control" id="displayGeneratedPassword" rows="3"></textarea>
             </div>
+            <!-- Copy button -->
             <button type="submit" class="btn btn-primary mb-2 customSubmit" id="copyButton">Copy</button>
         </form>
-    </div>
-
+    </main>
+    <!-- Scripts for bootstrap and javascript file -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
