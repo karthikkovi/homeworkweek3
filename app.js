@@ -40,16 +40,18 @@ document.getElementById("generatePassword").addEventListener("click", () => {
 
 function generateCharacterArray() {
 
-    // Read user options from the dropdowns
+    // Read user options from the checkboxes
 
-    for (let i = 1; i < 5; i++) {
-        let charactersUsed = document.getElementById("inputGroup-" + i).options[document.getElementById("inputGroup-" + i).selectedIndex].value;
+    let checkBoxes = document.querySelectorAll(".form-check-input");
+    for (let i=0; i<checkBoxes.length; i++){
 
         //Generate characterArray
-        if (charactersUsed === "1") {
-            characterArray += listOfCharacters[(i - 1)];
+        if (checkBoxes[i].checked === true){
+            characterArray += listOfCharacters[(i)];
         }
     }
+        
+    return characterArray;
 
 // Randomize the array
 
