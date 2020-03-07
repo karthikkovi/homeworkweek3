@@ -1,4 +1,6 @@
 The password generator is designed to create passwords between 8 and 128 characters.
 The passwords can be cusotmized to include, uppercase, lowercase, numbers and/or special characters in them.
 Site is responsive and mobile friendly.
-To use the password generator, input the length of the password and select the preferred checkboxes and click on generate password. Hitting the enterkey may give unexpected results
+To use the password generator, input the length of the password and select the preferred checkboxes and click on generate password. 
+Hitting the enter / return key instead of clicking on generate password may give unexpected results
+Site has been desgined as mobile-first and works best on smaller screens.
